@@ -1,1 +1,1 @@
-# Todo-List
+Create a simple TODO-list app, using OPP, HTML, CSS, JS and webpack.

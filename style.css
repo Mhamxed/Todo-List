@@ -1,0 +1,161 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    --bg: #0000000d;
+    --border: 1px solid black;
+    --shadow:rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.conatiner {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav {
+    display: flex;
+    gap: 5px;
+    padding: 20px 30px;
+    background-color: var(--bg);
+    font-size: 30px;
+    box-shadow: var(--shadow);
+    align-items: center;
+}
+
+.main {
+    display: flex;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 14vw;
+    height: 100vh;
+    padding: 20px 40px;
+    background-color: var(--bg);
+    box-shadow: var(--shadow);
+    align-items: left;
+    gap: 5px;
+    font-size: 20px;
+}
+
+.card {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.card:hover {
+    background-color: #0000000F;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 30px;
+    flex-grow: 1;
+    gap: 10px;
+}
+
+.add-task {
+    display: flex;
+    padding: 10px 20px;
+    justify-content: center;
+    gap: 5px;
+    font-size: 20px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    border-radius: 10px;
+    align-self: flex-start;
+}
+
+#add-project {
+    display: flex;
+    padding: 10px 20px;
+    justify-content: center;
+    gap: 5px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.add-task:hover {
+    background-color: var(--bg);
+}
+
+#add-project:hover {
+    background-color: #0000000F;
+}
+
+.add-task-form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-self: center;
+    background-color: var(--bg);
+    box-shadow: var(--shadow);
+    border-radius: 5px;
+    width: 200px;
+    scale: 0;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.add-project {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-self: center;
+    background-color: var(--bg);
+    box-shadow: var(--shadow);
+    border-radius: 5px;
+    width: 200px;
+    scale: 0;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} 
+
+.input {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+}
+
+input {
+    height: 25px;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: 0.5px solid black;
+}
+#description {
+    padding: 5px 7px;
+}
+
+#submit {
+    background-color: black;
+    border: none;
+    width: 100px;
+    height: 30px;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
