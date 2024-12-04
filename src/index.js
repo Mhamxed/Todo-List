@@ -1,5 +1,6 @@
-import{ task, all_tasks}  from './tasks'
+import{ task, all_tasks }  from './tasks'
 import { project, projects } from './projects'
+
 
 //tasks side
 const add_task_button = document.querySelector("#add-task")
@@ -13,6 +14,10 @@ const submitTask = document.querySelector('#submit-task')
 const titleError = document.querySelector('.title-error')
 const inbox = document.querySelector('#all-tasks')
 const projectDisplay = document.querySelector('#project-display')
+
+allTasksRender(all_tasks)
+renderProjects(projects)
+
 
 add_task_button.addEventListener('click', () => {
     openTaskPopup()
@@ -30,8 +35,13 @@ submitTask.addEventListener('click', (e) => {
     e.preventDefault();
     if (title.value === ""){
         titleError.textContent = "*Title required"
-    } else {
+    } else if (projectDisplay === "Today" || projectDisplay === "This Week" || projectDisplay === "Inbox"){
         const taskObject  = task.createTaskObject(title.value, description.value, duedate.value)
+        task.createTaskBar(taskObject)
+        CloseTaskPopup()
+        resetTaskPopUp()
+    } else {
+        const taskObject  = task.createTaskObject(title.value, description.value, duedate.value, projectDisplay.textContent)
         task.createTaskBar(taskObject)
         CloseTaskPopup()
         resetTaskPopUp()
@@ -63,8 +73,6 @@ const add_project_form = document.querySelector(".add-project")
 const submit_project_button = document.querySelector('#submit-projet')
 
 const project_title = document.querySelector("#project-title")
-const project_description = document.querySelector("#Project-description")
-const project_due_date = document.querySelector("#project-dueDate")
 const project_title_error = document.querySelector(".project-title-error")
 
 add_project_button.addEventListener('click', () => {
@@ -83,7 +91,7 @@ submit_project_button.addEventListener('click', (e) => {
     if (project_title.value === ""){
         project_title_error.textContent = "*Title required"
     } else {
-        const projectObject  = project.createProjectObject(project_title.value, project_description.value, project_due_date.value)
+        const projectObject  = project.createProjectObject(project_title.value)
         project.createProject(projectObject)
         closeProjectPopup()
         resetProjectPopUp()
@@ -104,17 +112,22 @@ function closeProjectPopup(){
 
 function resetProjectPopUp(){
     project_title.value = ""
-    project_description.value = ""
-    project_due_date.value = ""
     project_title_error.textContent = ""
 
 }
 
-function allTasksRender(all_tasks){
-    for (let i = 0; i < all_tasks.length; i++){
-        task.createTaskBar(all_tasks[i])
+function allTasksRender(tasks){
+    for (let i = 0; i < tasks.length; i++){
+        task.createTaskBar(tasks[i])
     }
 }
+
+function renderProjects(projects){
+    for (let i = 0; i < projects.length; i++){
+        project.createProject(projects[i])
+    }
+}
+
 //display all tasks
 inbox.addEventListener('click', () => {
     task.clearTaks()
@@ -173,3 +186,5 @@ CurrentWeek.addEventListener('click', () => {
     projectDisplay.textContent = "This Week"
     allTasksRender(getCurrWeekTasks())
 })
+
+export default allTasksRender;
