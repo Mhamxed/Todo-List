@@ -24,8 +24,8 @@ export class project {
         const removeProject = document.createElement('button')
         const inbox = document.querySelector('#all-tasks')
         
+        //create the project div and add all the element to it
         projectTab.classList.add('card')
-
         titleBox.style.display = "flex"
         titleBox.style.gap = "10px"
         titleBox.style.flexGrow = "1"
@@ -42,12 +42,14 @@ export class project {
         projectTab.appendChild(removeProject)
         projects.appendChild(projectTab)
 
+        //remove the project tab when the user clicks the X button
         removeProject.addEventListener('click', () => {
             removeProjectTasks(project)
             removeProject.closest(".card").remove()
             inbox.click()
         })
 
+        //display tasks when the user clicks on a project tab
         titleBox.addEventListener('click', () => {
             projectDisplay.textContent = project.title
             task.clearTaks()
@@ -56,6 +58,7 @@ export class project {
     }
 }
 
+//filter the projects tasks based on naming
 function getProjectTasks(project){
     let ans = []
     for (let i=0; i < all_tasks.length; i++){
@@ -66,6 +69,7 @@ function getProjectTasks(project){
     return ans
 }
 
+//remove a project tasks based on naming
 function removeProjectTasks(project){
     let projectTasks = getProjectTasks(project)
     for (let i =0; i < projectTasks.length; i++){

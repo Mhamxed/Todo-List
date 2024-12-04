@@ -1,7 +1,7 @@
 export let all_tasks =[]
 
 export class task {
-    constructor (title, description, duedate, projectTitle, done) {
+    constructor (title, description, duedate, projectTitle) {
         this.title = title
         this.description = description
         this.duedate = duedate
@@ -10,8 +10,8 @@ export class task {
     }
 
     //create the task bar with the form filled infos
-    static createTaskObject(title, description, duedate, projectTitle, done){
-        const task_object = new task(title, description, duedate, projectTitle, done)
+    static createTaskObject(title, description, duedate, projectTitle){
+        const task_object = new task(title, description, duedate, projectTitle)
         all_tasks.push(task_object)
         return task_object
     }
@@ -62,6 +62,7 @@ export class task {
         description.style.maxWidth = '500px'
         duedate.textContent = `${task.duedate}`
 
+        //manage tasks checkbox
         checkbox.addEventListener('change', () => {
             if (checkbox.checked){
                 console.log("checked")
@@ -75,7 +76,7 @@ export class task {
             }
         })
 
-
+        //create a listen to the remove button
         remove_btn.classList.add('button')
         remove_btn.innerHTML = '<i class="fa-solid fa-trash" style="color: #000000;"></i>'
         remove_btn.addEventListener('click', () => {
@@ -95,6 +96,8 @@ export class task {
         tasks.forEach(task => content.removeChild(task))
     }
 }
+
+//add some tasks so when the user reloads they get displayed
 
 const run = {
     title: "Run",
@@ -138,7 +141,7 @@ const sun = {
 }
 
 const study = {
-    title: "study software engineering",
+    title: "Study software engineering",
     description: "6 hours of focus on the Odin Project Javascript path",
     duedate: "2024-12-03",
     projectTitle: "Study"
@@ -157,8 +160,6 @@ const mom = {
     duedate: "2024-12-03",
     projectTitle: "Relationship"
 }
-
-
 
 all_tasks.push(run)
 all_tasks.push(breakfast)

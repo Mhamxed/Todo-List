@@ -41,7 +41,7 @@ submitTask.addEventListener('click', (e) => {
         CloseTaskPopup()
         resetTaskPopUp()
     } else {
-        const taskObject  = task.createTaskObject(title.value, description.value, duedate.value, projectDisplay.textContent)
+        const taskObject  = task.createTaskObject(title.value, description.value, duedate.value)
         task.createTaskBar(taskObject)
         CloseTaskPopup()
         resetTaskPopUp()
