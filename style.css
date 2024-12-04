@@ -59,6 +59,7 @@
 
 .card {
     display: flex;
+    position: relative;
     gap: 10px;
     align-items: center;
     cursor: pointer;
@@ -68,6 +69,13 @@
 
 .card:hover {
     background-color: #0000000F;
+}
+
+.remove-project-btn {
+    position: absolute;
+    max-width: 20px;
+    right: 15px;
+    background: none;
 }
 
 .projects {

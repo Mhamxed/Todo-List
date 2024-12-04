@@ -96,53 +96,78 @@ export class task {
     }
 }
 
-const walk = {
-    title: "Walk",
-    description: "Walk for 5km!!",
-    duedate: "2024-12-03",
-    projectTitle: ""
-}
-
 const run = {
     title: "Run",
     description: "Run for 5km!!",
-    duedate: "2024-12-04",
-    projectTitle: ""
+    duedate: "2024-12-03",
+    projectTitle: "Health"
 }
 
 const breakfast = {
     title: "Breakfast",
-    description: "Have breakfast",
+    description: "Have a Smoked Salmon Bagel and banana smoothie",
     duedate: "2024-12-03",
     projectTitle: "Food"
 }
 
 const lunch = {
     title: "Lunch",
-    description: "Have lunch",
-    duedate: "2024-12-10",
+    description: "Have steamed rice, chicken, spinage and olive oil",
+    duedate: "2024-12-03",
+    projectTitle: "Food"
+}
+
+const dinner = {
+    title: "Dinner",
+    description: "Have leftovers, keep it light",
+    duedate: "2024-12-03",
     projectTitle: "Food"
 }
 
 const gym = {
-    title: "gym",
-    description: "Hit the gym",
+    title: "Gym",
+    description: "Hit the gym, push day",
     duedate: "2024-12-03",
     projectTitle: "Gym"
 }
-
-const push = {
-    title: "Push day",
-    description: "Push day at the gym",
+const sun = {
+    title: "Touch grass",
+    description: "30 mins in the sun",
     duedate: "2024-12-03",
-    projectTitle: "Gym"
+    projectTitle: "Health"
 }
 
-all_tasks.push(walk)
+const study = {
+    title: "study software engineering",
+    description: "6 hours of focus on the Odin Project Javascript path",
+    duedate: "2024-12-03",
+    projectTitle: "Study"
+}
+
+const GF = {
+    title: "Spend time with GF",
+    description: "Hang out with Girlfriend",
+    duedate: "2024-12-03",
+    projectTitle: "Relationship"
+}
+
+const mom = {
+    title: "Phone call with fam",
+    description: "30 min phone call with the fam",
+    duedate: "2024-12-03",
+    projectTitle: "Relationship"
+}
+
+
+
 all_tasks.push(run)
 all_tasks.push(breakfast)
 all_tasks.push(lunch)
+all_tasks.push(dinner)
 all_tasks.push(gym)
-all_tasks.push(push)
+all_tasks.push(sun)
+all_tasks.push(study)
+all_tasks.push(GF)
+all_tasks.push(mom)
 
 
